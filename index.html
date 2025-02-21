@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kota Malang</title>
+    <link rel="icon" type="image/png" href="Favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D50000",
+                        dark: "#212121",
+                        light: "#F5F5F5",
+                        border: "#E0E0E0",
+                    },
+                    animation: {
+                        fadeIn: "fadeIn 1s ease-in-out",
+                        bounceOnce: "bounce 0.5s ease-in-out",
+                        slideText: "slideText 6s ease-in-out infinite",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" }
+                        },
+                        slideText: {
+                            "0%": { transform: "translateX(-100%)" },
+                            "10%": { transform: "translateX(0)" },
+                            "90%": { transform: "translateX(0)" },
+                            "100%": { transform: "translateX(100%)" }
+                        }
+                    }
+                }
+            }
+        };
+
+        function bukaCanva() {
+            let canvaWindow = window.open("https://www.canva.com", "CanvaWindow", "width=1200,height=700");
+            if (!canvaWindow) {
+                alert("Popup diblokir! Harap izinkan pop-up di browser Anda.");
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light text-dark">
+    <header class="bg-primary text-white py-6 shadow-lg text-center text-3xl font-bold uppercase tracking-wider animate-fadeIn">
+        Kota Malang
+    </header>
+
+    <div class="container mx-auto mt-10 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 border border-border">
+                    <iframe id="videoFrame" class="w-full aspect-video" src="https://www.youtube.com/embed/C4B7BFQ8MD4?si=n4sEJM7WWKkpuA3H"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <button onclick="bukaCanva()"
+                        class="w-full bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                        Buka Canva di Halaman Ini
+                    </button>
+                </div>
+            </div>
+
+            <aside class="md:col-span-1 space-y-4">
+                <div class="bg-white rounded-xl p-4 border border-border shadow-md">
+                    <h2 class="text-xl font-semibold text-center mb-4">Malang</h2>
+                    <div class="space-y-2">
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/TTtPqDCP_XE?si=Ju_1b_8Zh-mUrZ4-'"
+                            class="w-full bg-primary hover:bg-red-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Video 1
+                        </button>
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/BCwfkSt9v6o?si=XgnDQuf0vKaxl-8d' "
+                            class="w-full bg-primary hover:bg-red-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Video 2
+                        </button>
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/fAgsQRtNPIM?si=4pNu-_7EpffmmLMP' "
+                            class="w-full bg-primary hover:bg-red-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Video 3
+                        </button>
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/NYalLn_svg4?si=kh1i18JS2DIyUg8B' "
+                            class="w-full bg-primary hover:bg-red-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Video 4
+                        </button>
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/Fs5QHRhn2wM?si=P6UOB898zG9NqW4D' "
+                            class="w-full bg-primary hover:bg-red-600 text-white transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Video 5
+                        </button>
+                        <button onclick="document.getElementById('videoFrame').src='https://www.youtube.com/embed/C4B7BFQ8MD4?si=n4sEJM7WWKkpuA3H' "
+                            class="w-full bg-gray-300 hover:bg-gray-400 text-dark transition-all duration-300 py-3 rounded-lg shadow-md transform hover:scale-105 active:animate-bounceOnce border border-border">
+                            Kembali ke Video Utama
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="bg-red-600 py-6 mt-12 text-center text-sm text-white">
+        <div class="animate-slideText">
+            Selamat Datang di Beautiful Malang! Temukan keindahan dan budaya kota kami.
+        </div>
+    </footer>
+</body>
+
+</html>
